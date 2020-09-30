@@ -52,7 +52,8 @@ def round_win(player1, player2, player1_score, player2_score):
     elif player1==3 and player2==2:
         player1_score+=1
         print("Player 1 wins the round")
-    elif (player1==1 and player2==1) or (player1==2 and player2==2) or (player1==3 and player2==3):
+    elif (player1==1 and player2==1) or (player1==2 and player2==2) 
+    or (player1==3 and player2==3):
         print("This round is a draw !!!")
     return player1_score, player2_score
 
