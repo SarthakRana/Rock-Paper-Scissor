@@ -25,8 +25,10 @@ def start_play(best_of):
                         valid_selection = True
                         player2 = random.choice(choice_list)
                         print(f'Computer selected : {player2}')
-                        player1_score, player2_score = round_win(player1, player2,
-                                                                 player1_score, player2_score)
+                        player1_score, player2_score = round_win(player1,
+                                                                 player2,
+                                                                 player1_score,
+                                                                 player2_score)
         winner_player = winner(player1_score, player2_score)
         return winner_player
 
@@ -60,15 +62,13 @@ def round_win(player1, player2, player1_score, player2_score):
 
 
 def winner(player1_score, player2_score):
+    print("#"*128)
     if player1_score > player2_score:
-        print("#"*128)
         return "!!! PLAYER 1 WON THE GAME !!!"
     elif player1_score < player2_score:
-        print("#"*128)
         return "!!! COMPUTER WON THE GAME !!!"
     else:
-        print("---------------")
-        return "!!! GAME TIED !!!"
+        return '!!! GAME TIED !!!'
 
 
 if __name__ == '__main__':
@@ -87,7 +87,8 @@ if __name__ == '__main__':
                     best_of = int(best_of)
                     if(best_of % 2 == 0):
                         print(
-                            "Even number of rounds not allowed. Please enter an odd number !")
+                            "Even number of rounds not allowed. "
+                            "Please enter an odd number !")
                     else:
                         winner_player = start_play(best_of)
                         print(winner_player)
@@ -103,11 +104,10 @@ if __name__ == '__main__':
                                 if play_again == 'y':
                                     play = True
                                     print("\nGet Ready\n")
-                                    print("#"*128)
                                 else:
                                     play = False
                                     print("\nSee ya, bye!\n")
-                                    print("#"*128)
+                                print("#"*128)
 
     except Exception as e:
         print("Exception occurred with message : ", e)
